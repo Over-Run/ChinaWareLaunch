@@ -1,3 +1,5 @@
+package org.overrun.chinaware.api
+
 import androidx.compose.material.MaterialTheme
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.material.Button
@@ -9,6 +11,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
+import org.overrun.chinaware.findjava.FindJava
+import org.overrun.chinaware.findjava.utils
+import org.overrun.chinaware.os.OsInfoUtil
+import org.overrun.chinaware.os.instance_
 
 @Composable
 @Preview
@@ -24,8 +30,12 @@ fun App() {
     }
 }
 
-fun main() = application {
-    Window(onCloseRequest = ::exitApplication) {
-        App()
+fun main() {
+    println(instance_.getOs())
+    FindJava.findJava()
+    application {
+        Window(onCloseRequest = ::exitApplication) {
+            App()
+        }
     }
 }
