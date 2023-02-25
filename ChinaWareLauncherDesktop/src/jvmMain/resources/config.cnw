@@ -1,1 +1,2 @@
-select java -> ""
+//<-代表右边往左传入 ->代表左边往又传
+select_java <- ""
