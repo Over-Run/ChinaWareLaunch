@@ -1,2 +1,16 @@
-//<-代表右边往左传入 ->代表左边往又传
-select_java <- ""
+//<-代表右边往左传入 ->代表左边往右传
+
+/*
+    示例意思为 初始化select_java
+    find_java为固定值
+    如果 select java 为空字符串或者空,则 find_java数组第一项传入select_java
+*/
+select_java <- "";
+find_java <-
+"C:\java\jdk-xx\bin\java.exe",
+"C:\java\jdk-xxx\bin\java.exe",
+"C:\java\jdk-x\bin\java.exe",
+;
+if(select_java is empty) {
+    find_java[0] -> select_java
+}
