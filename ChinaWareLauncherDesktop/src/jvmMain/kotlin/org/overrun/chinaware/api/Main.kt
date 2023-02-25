@@ -13,7 +13,6 @@ import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import org.overrun.chinaware.findjava.FindJava
 import org.overrun.chinaware.findjava.utils
-import org.overrun.chinaware.os.OsInfoUtil
 import org.overrun.chinaware.os.instance_
 
 @Composable
@@ -31,8 +30,8 @@ fun App() {
 }
 
 fun main() {
-    println(instance_.getOs())
     FindJava.findJava()
+    utils.forEach { println(it) }
     application {
         Window(onCloseRequest = ::exitApplication) {
             App()
